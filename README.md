@@ -31,7 +31,7 @@ The solution leverages several key Big Data technologies:
 
 ### Real-time Pipeline
 - `risk_kafka_producer.py`: Reads data from HDFS and streams to Kafka topic "risk_data"
-- `risk_kafka_consumer.py`: Consumes data stream, applies ML model, and stores predictions in PostgreSQL
+- `postgre_consumer.py`: Consumes data stream, applies ML model, and stores predictions in PostgreSQL
 
 ### Visualization
 - `streamlit_dashboard.py`: Interactive web dashboard for data exploration and visualization
@@ -120,7 +120,7 @@ python risk_kafka_producer.py
 
 5. Run the Spark Streaming consumer:
 ```bash
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1,org.postgresql:postgresql:42.2.27 risk_kafka_consumer.py
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1,org.postgresql:postgresql:42.2.27 postgre_consumer.py
 ```
 
 6. Launch the Streamlit dashboard:
