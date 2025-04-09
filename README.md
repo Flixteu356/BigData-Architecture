@@ -58,7 +58,7 @@ Data is processed and augmented with risk scores and categories.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/covid-risk-prediction.git
+git clone https://github.com/Houssam-11/BigData-Architecture.git
 cd covid-risk-prediction
 ```
 
