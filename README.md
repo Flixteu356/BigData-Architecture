@@ -11,7 +11,7 @@ The solution leverages several key Big Data technologies:
 - **Database**: PostgreSQL for prediction storage
 - **Visualization**: Streamlit dashboard and Grafana monitoring
 
-![Architecture Overview](https://via.placeholder.com/800x400?text=Big+Data+Architecture+Diagram)
+![project Architecture](assets/0-1 architecture.png)
 
 ## Features
 - Conversion of CSV data to optimized Parquet format with time-based partitioning
