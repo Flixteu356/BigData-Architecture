@@ -1,5 +1,7 @@
 # COVID-19 Risk Prediction System using Big Data Architecture
 
+![project overview](assets/streamlit_dash.gif)
+
 ## Overview
 This project implements a comprehensive Big Data architecture to predict pandemic risk levels, focusing on COVID-19 data analysis. The system processes historical COVID-19 data, trains a machine learning model, and provides real-time risk predictions through an interactive dashboard.
 
@@ -11,7 +13,7 @@ The solution leverages several key Big Data technologies:
 - **Database**: PostgreSQL for prediction storage
 - **Visualization**: Streamlit dashboard and Grafana monitoring
 
-![project Architecture](assets/0-1 architecture.png)
+![project Architecture](assets/Architecture.png)
 
 ## Features
 - Conversion of CSV data to optimized Parquet format with time-based partitioning
@@ -133,8 +135,6 @@ The final system provides:
 - Identification of high-risk pandemic zones
 - Geographic visualization of risk distribution
 - Time-based analysis of pandemic trends
-
-![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)
 
 ## Future Improvements
 - Integration with external data sources (weather, population density)
